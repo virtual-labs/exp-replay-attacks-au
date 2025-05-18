@@ -20,4 +20,68 @@ Suppose Alice sends a message to Bob asking for his password to access a particu
 
 In this scenario, Eve is using a combination of a passive attack (eavesdropping) and an active attack (replaying the message) to gain unauthorized access to the system. By replaying the intercepted message, Eve is able to impersonate Bob and gain access to the system using his credentials.
 
-To prevent replay attacks, various security measures can be implemented, such as using cryptographic protocols that provide message authentication, using random nonces (a random number used once) to prevent message replay, and timestamping messages to ensure that they are not accepted if they are too old
+To prevent replay attacks, various security measures can be implemented, such as using cryptographic protocols that provide message authentication, using random nonces (a random number used once) to prevent message replay, and timestamping messages to ensure that they are not accepted if they are too old.
+
+### Technical Details of Replay Attacks
+
+A replay attack typically occurs in two phases:
+
+1. Phase 1 – Interception (Passive)
+   - The attacker eavesdrops on the communication
+   - Records sensitive data such as:
+     - Login requests
+     - Authentication tokens
+     - Session IDs
+     - Payment confirmations
+
+2. Phase 2 – Replay (Active)
+   - The attacker replays the recorded data to the server to:
+     - Gain unauthorized access
+     - Duplicate transactions
+     - Bypass authentication
+   - Often targets protocols that lack freshness checks like timestamps or unique session tokens
+
+### Common Examples of Replay Attacks
+
+| Example | Target | Attack Goal |
+|---------|---------|-------------|
+| Replaying login request | Web Authentication | Bypass password without knowing it |
+| Reusing a payment confirmation | Online Transaction | Duplicate payment without authorization |
+| Repeating OTP or token | Banking Apps | Gain unauthorized access or transfer funds |
+
+### Replay Attack Flow
+
+#### Step 1: Legitimate Communication
+
+```
+
++--------+                               +--------+
+| Client | -------- Request (Login) ---> | Server |
++--------+                               +--------+
+```
+
+#### Step 2: Attacker Listens and Captures
+
+```
+
+                 |
+                 v
+        +--------------------+
+        |     Attacker       |
+        | (Interception Tool)|
+        +--------------------+
+```
+
+#### Step 3: Replays the Same Request
+
+```
+
++--------+                               +--------+
+| Attacker (Impersonates Client) ------> | Server |
+|        (Replay Saved Request)          |        |
++--------+                               +--------+
+```
+
+#### Result:
+
+Server believes it's the original client!
