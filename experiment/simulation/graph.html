@@ -168,13 +168,12 @@
 <div class="flex-box">
     <div class="control-panel">
         <h2>
-            Network Graph simulating active TCP SYN Attacks
+            Network Graph simulating a replay attack on a client/server connection
         </h2>
         <div>
             <h4>
                 Choose the number of clients and servers required and click on "Generate Graph" to generate the graph.
-                Click on a client and a server to send packets between client and server and observe the logs to witness
-                an example of active TCP SYN attack.
+                Click on a connection to see the messages being passed between client and server.
             </h4>
             <label>Number of Servers</label>
             <input type="number" id="countServer" name="count" min="1" max="50" value="1">
@@ -486,7 +485,7 @@
             setTimeout(function () {
                 //REACHES HACKER HERE
                 if (protocol === "HTTPS") {
-                    logList.innerHTML += '<li>Packet from <span style="color: #8a8ac2">' + clientData.id + ' </span> to <span style="color: #8a8ac2">' + serverData.id + '</span> cannot be intercepted as it is <span style="color: #ff0000"> encrypted </span></li>';
+                    logList.innerHTML += '<li>Packet from <span style="color: #8a8ac2">' + clientData.id + ' </span> to <span style="color: #8a8ac2">' + serverData.id + '</span> cannot be intercepted as it is <span style="color: #ff0000"> encrypted </span>. Try again</li>';
                     logList.scrollTo(0, logList.scrollHeight * 100)
                 } else {
                     //TODO: Print some packet content
