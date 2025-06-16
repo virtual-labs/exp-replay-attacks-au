@@ -1,6 +1,3 @@
-### Aim of the experiment
+### Aim
 
-To understand how to combine passive and active attacks to obtain
-information. This exercise serves as a simulation of a real-world scenario
-wherein a combination of attacks is used to obtain access to confidential
-information.
+This experiment aims to demonstrate how passive and active attacks can be combined to intercept and manipulate data. By simulating a replay attack, you will learn how an attacker can capture, record, and re-transmit sensitive information to gain unauthorized access to a system. This exercise highlights a real-world scenario where multiple attack techniques are used to compromise confidential data.
