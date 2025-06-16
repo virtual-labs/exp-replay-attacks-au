@@ -1,6 +1,6 @@
 ### Theory
 
-Combining passive and active attacks refers to a type of cyber attack where an attacker uses a combination of techniques to compromise a system or gain unauthorized access to sensitive information.
+A combined cyber attack leverages both passive and active techniques to compromise a system or gain unauthorized access to sensitive information.
 
 Here are some examples of how passive and active attacks can be combined:
 
@@ -20,7 +20,10 @@ Suppose Alice sends a message to Bob asking for his password to access a particu
 
 In this scenario, Eve is using a combination of a passive attack (eavesdropping) and an active attack (replaying the message) to gain unauthorized access to the system. By replaying the intercepted message, Eve is able to impersonate Bob and gain access to the system using his credentials.
 
-To prevent replay attacks, various security measures can be implemented, such as using cryptographic protocols that provide message authentication, using random nonces (a random number used once) to prevent message replay, and timestamping messages to ensure that they are not accepted if they are too old.
+To prevent replay attacks, various security measures can be implemented. These include:
+- **Cryptographic Protocols:** Use protocols that provide message authentication to verify the source and integrity of messages.
+- **Nonces:** Implement nonces (random numbers used only once) in communications to prevent attackers from replaying old messages.
+- **Timestamps:** Add timestamps to messages to ensure they are not accepted if they are outside a valid time window.
 
 ### Technical Details of Replay Attacks
 

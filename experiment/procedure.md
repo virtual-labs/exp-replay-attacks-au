@@ -1,28 +1,28 @@
 ### Procedure
 
-1. You have the option to choose a channel that is to be intercepted. Here, the student is the hacker.
+1.  Choose a channel to intercept. For this simulation, you will act as the **Attacker**.
 
-2. Click “Start” to start the simulation.
+2.  Click **"Start"** to begin the simulation.
 
-3. Observe the connection from the selected channel to server being changed to selected channel to hacker's computer then to the server. Observe the connection message in the terminal at bottom.
+3.  Observe the communication path. You will see the connection rerouted from the **Client** to the **Attacker's** machine and then to the **Server**. The terminal at the bottom will display connection status messages.
 
-4. Click “Next” to start packet transmission.
+4.  Click **"Next"** to initiate packet transmission.
 
-5. Observe the packet being sent from client to hacker. Now that the hacker has intercepted a packet, he can use this to communicate with the server on behalf of the user. The intercepted packet is shown in the terminal.
+5.  Watch as a packet from the **Client** is intercepted by the **Attacker**. The intercepted packet's contents will be displayed in the terminal. With this packet, the **Attacker** can now impersonate the **Client**.
 
-6. Click on the corresponding port number under the 'Respond' section on hacker computer, and the simulation begins.
+6.  To replay the intercepted packet, click the corresponding port number in the "Respond" section of the **Attacker's** computer view.
 
-7. Observe the packet being sent from the hacker to the server on behalf of the user.
+7.  Observe as the **Attacker** sends the captured packet to the **Server**, impersonating the **Client**.
 
-8. Click on 'Next' to send a response back to the user from the server. Note that this packet will not actually reach the user, it will be intercepted by the hacker's computer.
+8.  Click **"Next"** for the **Server** to send its response. This response, intended for the **Client**, will also be intercepted by the **Attacker**.
 
-9. Observe the response message from the server which contains username and password.
+9.  Observe the intercepted response from the **Server**, which contains the **Client's** username and password.
 
-10. Click on the corresponding Port number under the 'Respond' section on the hacker computer after the packet reaches the hacker.
+10. To forward the server's response to the original **Client**, click the corresponding port number in the "Respond" section of the **Attacker's** computer view.
 
-11. Observe the packet being sent from the hacker to the client on behalf of the server.
+11. Observe the packet being sent from the **Attacker** to the **Client**.
 
-12. Copy the username and password once it has been received and enter it in the input boxes provided on screen.
+12. Once the username and password appear on the **Client's** screen, copy and paste them into the input fields provided for verification.
 
-13. Click on “Verify”, the experiment is successful if both the username and password that the hacker intercepted are correct.
+13. Click **"Verify"**. If the credentials are correct, the experiment is successful.
 
