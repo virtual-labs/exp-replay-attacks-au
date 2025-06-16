@@ -14,12 +14,12 @@
       "difficulty": "beginner"
     },
     {
-      "question": "Which of the following best describes combining active and passive attacks in an ongoing computer in a network? ",
+      "question": "In a combined attack, which action is an active step that could follow passive reconnaissance?",
       "answers": {
-        "a": "Eavesdropping on network traffic",
-        "b": "Installing malware on a system",
-        "c": "Modifying data in transit",
-        "d": "Scanning for open ports"
+        "a": "Eavesdropping on network traffic to capture credentials",
+        "b": "Using stolen credentials to install malware on a system",
+        "c": "Monitoring network performance to identify peak usage times",
+        "d": "Scanning a network to discover open ports and services"
       },
      "correctAnswer": "b",
       "difficulty": "beginner"
