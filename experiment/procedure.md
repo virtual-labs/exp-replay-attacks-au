@@ -1,4 +1,4 @@
-### Procedure
+
 
 1.  Choose a channel to intercept. For this simulation, you will act as the **Attacker**.
 
