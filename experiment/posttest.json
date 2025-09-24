@@ -2,37 +2,38 @@
   "version": 2.0,
   "questions": [
     {
-      "question": "This is a Sample Question 1?",
+      "question": "Which of the following statements is true about combining passive and active attacks? ",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Passive attacks are less dangerous than active attacks",
+        "b": "Active attacks are less detectable than passive attacks.",
+        "c": "Combining passive and active attacks can increase the success rate of an attack.",
+        "d": "Combining passive and active attacks can only be done by expert hackers."
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
-      },
-      "correctAnswer": "a",
+      
+      "correctAnswer": "c",
       "difficulty": "beginner"
     },
     {
-      "question": "This is a Sample Question 2?",
+      "question": "In a combined attack, which action is an active step that could follow passive reconnaissance?",
       "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+        "a": "Eavesdropping on network traffic to capture credentials",
+        "b": "Using stolen credentials to install malware on a system",
+        "c": "Monitoring network performance to identify peak usage times",
+        "d": "Scanning a network to discover open ports and services"
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+     "correctAnswer": "b",
+      "difficulty": "beginner"
+    },
+    {
+      "question": "Which of the following is a type of replay attack?",
+      "answers": {
+        "a": "Brute-force attack",
+        "b": "SQL Injection",
+        "c": "DNS Spoofing",
+        "d": "Session hijacking"
       },
-      "correctAnswer": "c",
+       
+      "correctAnswer": "d",
       "difficulty": "beginner"
     }
   ]
