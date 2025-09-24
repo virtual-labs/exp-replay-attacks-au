@@ -1,4 +1,4 @@
-### Theory
+
 
 A combined cyber attack leverages both passive and active techniques to compromise a system or gain unauthorized access to sensitive information.
 
