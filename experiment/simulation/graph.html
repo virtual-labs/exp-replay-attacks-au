@@ -22,7 +22,7 @@
             background-color: #F9FAFE;
         }
 
-        * { 
+        * {
             box-sizing: border-box;
         }
 
@@ -49,124 +49,73 @@
 
         .control-panel {
             padding: 20px;
-            flex: 1.5; /* Make panel wider */
+            flex: 1;
             display: flex;
             flex-direction: column;
-            justify-content: flex-start;
+            justify-content: space-around;
             align-items: start;
             width: 100%;
             height: 800px;
             margin: auto;
             overflow-y: scroll;
-            background: #F9FAFE; /* Restore initial color scheme */
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
         }
-        .control-panel h2 {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 18px;
-            margin-top: 0;
-            color: #111;
-        }
-        .aim-box {
-            border: none;
-            margin-bottom: 0;
-            padding: 0;
-        }
-        .aim-title {
-            font-weight: bold;
-            font-size: 16px;
-            margin-bottom: 4px;
-            margin-top: 18px;
-            background: none;
-            border: none;
-            padding: 0;
-        }
-        .expected-box {
-            background: #e8f5e9;
-            border-left: 4px solid #43b047;
-            padding: 12px 16px;
-            margin-bottom: 18px;
-            border-radius: 4px;
-            margin-top: 18px;
-        }
-        .expected-title {
-            font-weight: bold;
-            color: #1b5e20;
-            font-size: 1.1rem;
-            margin-bottom: 4px;
-        }
-        .control-panel label {
-            font-size: 16px;
-            color: #222;
-            font-weight: 500;
-            margin-bottom: 6px;
-            display: block;
-            margin-top: 10px;
-        }
-        .control-panel input[type="number"] {
+
+        input[type=number] {
             width: 100%;
-            padding: 12px 10px;
-            margin-bottom: 18px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
             border: 1px solid #ccc;
             border-radius: 4px;
-            font-size: 16px;
             box-sizing: border-box;
-            background: #fafbfc;
-            transition: border 0.2s;
         }
-        .control-panel input[type="number"]:focus {
-            border: 1.5px solid #43b047;
-            outline: none;
-        }
-        button#button {
-            background-color: #43b047;
-            color: #fff;
-            font-weight: bold;
-            font-size: 20px;
+
+        button {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
             border: none;
-            border-radius: 6px;
-            padding: 16px 0;
-            width: 100%;
-            margin-top: 8px;
-            margin-bottom: 16px;
-            height :8%;
-            cursor: pointer;
-            transition: background 0.2s;
-            box-shadow: 0 2px 8px rgba(67,176,71,0.08);
-        }
-        button#button:hover:enabled {
-            background-color: #36923a;
-        }
-        button#button:disabled {
-            background-color: #bdbdbd;
-            color: #fff;
-            cursor: not-allowed;
-        }
-        .legend-box {
-            background: #fafafa;
-            border: 1px solid #e0e0e0;
             border-radius: 4px;
-            padding: 12px 16px;
-            margin-top: 24px;
-            width: 100%;
+            cursor: pointer;
         }
-        .legend-row {
+
+        button:disabled {
+            background-color: #BDBDBD;
+            color: #424242;
+            cursor: not-allowed;
+            transform: scale(1, 1);
+        }
+
+        .flex {
             display: flex;
+            flex-direction: row;
+            justify-content: space-between;
             align-items: center;
-            margin-bottom: 8px;
         }
-        .legend-circle {
-            width: 14px;
-            height: 14px;
+
+        h4 {
+            padding: 0;
+            margin: 0 0 10px;
+            color: #919191;
+            font-weight: 400;
+            
+        }
+
+        .circle {
+            height: 25px;
+            width: 25px;
             border-radius: 50%;
-            display: inline-block;
-            margin-right: 8px;
         }
-        .legend-http { background: #196e96; }
-        .legend-https { background: #f1e312; }
-        .legend-attack { background: #ee0606; }
+
+        .orange {
+            background-color: #FF9800;
+        }
+
+        .blue {
+            background-color: #2196F3;
+        }
 
         div {
             box-sizing: border-box;
@@ -174,7 +123,7 @@
 
         #logs {
             height: 100%;
-            flex: 1.7; 
+            flex: 1;
             align-self: start;
             background-color: #121212;
             color: white;
@@ -184,7 +133,6 @@
             justify-content: flex-start;
             align-items: start;
             padding: 20px;
-            transition: flex 0.5s;
         }
 
         h3 {
@@ -220,42 +168,32 @@
 <div class="flex-box">
     <div class="control-panel">
         <h2>
-        Network Graph simulating a replay attack on a client/server connection
+            Network Graph simulating active TCP SYN Attacks
         </h2>
-        <div class="aim-box">
-            <div class="aim-title">Aim</div>
-            To simulate and visualize a replay attack on a client/server connection using a network graph, allowing users to observe how packets are intercepted or protected based on protocol (HTTP/HTTPS).
-        </div>
-        <br>
-        <div class="expected-box">
-            <div class="expected-title">Expected Outcome</div>
-            Observe the difference in packet interception between HTTP and HTTPS. HTTP packets can be intercepted and modified by the attacker (MITM), while HTTPS packets remain encrypted and protected.
-        </div>
-        
         <div>
-            <ul style="color: #111111; font-size: 1em; margin: 0 0 0 1px; padding: 0 0 0 18px; list-style: disc;">
-                <li>Choose the number of clients and servers required and click on "Generate Graph" to generate the graph.</li>
-                <li>Click on a client and a server to send packets between client and server.</li>
-                <li>Observe the log page to view step-by-step events.</li>
-            </ul>
-            <br>
-            <label style="font-size: 15px; color: #222;">Number of Servers</label>
+            <h4>
+                Choose the number of clients and servers required and click on "Generate Graph" to generate the graph.
+                Click on a client and a server to send packets between client and server and observe the logs to witness
+                an example of active TCP SYN attack.
+            </h4>
+            <label>Number of Servers</label>
             <input type="number" id="countServer" name="count" min="1" max="50" value="1">
-            <label style="font-size: 15px; color: #222;">Number of Clients</label>
+            <label>Number of Clients</label>
             <input type="number" id="countClient" name="count" min="1" max="50" value="1">
-            <button onclick="init()" id="button" style="margin-top: 12px; margin-bottom: 18px;">Generate Graph</button>
-            <br>
+
+            <button onclick="init()" id="button">Generate Graph</button>
+
             <span class="attack-info">Attacking client: </span>
             <span id="client-id"></span>
             <br>
             <span class="attack-info">Target server: </span>
             <span id="server-id"></span>
 
-
-            <div class="legend-box">
-                <div class="legend-row"><span class="legend-circle legend-http"></span> HTTP </div>
-                <div class="legend-row"><span class="legend-circle legend-https"></span>HTTPS</div>
-                <div class="legend-row"><span class="legend-circle legend-attack"></span>Attack occured</div>
+            <div class="flex" style="margin-top: 30px">
+                <span>HTTP packet: </span> <span class="circle blue"></span>
+            </div>
+            <div class="flex" style="margin-top: 10px">
+                <span>HTTPS packet: </span> <span class="circle orange"></span>
             </div>
         </div>
     </div>
@@ -298,50 +236,31 @@
 
     function addServer() {
         nodes.push({
-            id: "server" + (serverCountCreated + 1), // Start from 1
+            id: "server" + serverCountCreated,
             type: "server",
             icon: "server.svg",
             isClicked: false,
         })
-        links.push({source: "server" + (serverCountCreated + 1), target: "hacker", color: "#8a8ac2"})
+        links.push({source: "server" + serverCountCreated, target: "hacker", color: "#8a8ac2"})
         serverCountCreated++
     }
 
     function addClient() {
         nodes.push({
-            id: "client" + (clientCountCreated + 1), // Start from 1
+            id: "client" + clientCountCreated,
             type: "client",
             icon: "workstation.svg",
             isClicked: false,
         })
-        links.push({source: "client" + (clientCountCreated + 1), target: "hacker", color: "#8a8ac2"})
+        links.push({source: "client" + clientCountCreated, target: "hacker", color: "#8a8ac2"})
         clientCountCreated++
     }
 
-    function resetSimulation() {
-        // Remove SVG if exists
-        d3.select("#chart").selectAll("svg").remove();
-        // Remove ResizeObserver if exists
-        if (window._resizeObserver) {
-            window._resizeObserver.disconnect();
-            window._resizeObserver = null;
-        }
-        // Reset variables
-        nodes = [];
-        links = [];
-        serverCountCreated = 0;
-        clientCountCreated = 0;
-        isSimulationInitialized = false;
-        // Reset UI
-        document.getElementById("client-id").innerHTML = "";
-        document.getElementById("server-id").innerHTML = "";
-        document.getElementById("log-list").innerHTML = "";
-        // Enable the button so user can generate again
-        document.getElementById("button").disabled = false;
-    }
-
     function init() {
-        resetSimulation();
+
+        if (isSimulationInitialized) {
+            return
+        }
 
         let serverCount = document.getElementById("countServer").value
         serverCount = parseInt(serverCount)
@@ -388,15 +307,15 @@
         logList.innerHTML += "<li>Graph has been generated</li>"
         logList.scrollTo(0, logList.scrollHeight * 100)
 
-        document.getElementById("logs").style.flex = "1"; // Make log page narrower during simulation
-        // Dynamically calculate width for center
-        let chartDiv = document.getElementById("chart");
-        let flexBox = document.querySelector('.flex-box');
-        let getChartWidth = () => chartDiv.clientWidth > 0 ? chartDiv.clientWidth : 1000;
-        let width = getChartWidth();
-        let height = 800;
+        document.getElementById("button").disabled = true;
+
+
+        //match width and height to the size of the container
+        let width = 1000
+        let height = 800
 
         nodes.push({id: "hacker", type: "hacker", icon: "laptop.svg"})
+
         let svg = d3.select("#chart")
             .append("svg")
             .attr("width", width)
@@ -412,12 +331,12 @@
         let simulation = d3.forceSimulation(nodes)
             .force("link", linkForce)
             .force("charge", d3.forceManyBody().strength(-1000))
-            .force("center", d3.forceCenter(width / 2, height / 2)) // Center hacker
+            .force("center", d3.forceCenter(500, 400))
             .force("y", d3.forceY().y(function (d) {
                 if (d.type === "server") {
-                    return height / 4; // Top half
+                    return height / 7;
                 } else if (d.type === "client") {
-                    return height * 0.75; // Bottom half
+                    return height * 0.75;
                 } else {
                     return height / 2;
                 }
@@ -607,11 +526,11 @@
                             //HACKER TO CLIENT
                             logList.innerHTML += '<li>Response packet reached <span style="color: #8a8ac2"> client </span></li>';
                             logList.scrollTo(0, logList.scrollHeight * 100)
-                        }, 1600)
-                    }, 1600)
-                }, 1600);
+                        }, 800)
+                    }, 800)
+                }, 800);
 
-            }, 1600);
+            }, 800);
         }
 
         function logRandomRequestResponsePacket(isResponse) {
@@ -652,6 +571,7 @@
 
         function movePacket(sourceType, targetType, id, isSourceToTarget, protocol, interceptedPacket) {
             let destination;
+            console.log("Moving packet from " + sourceType + " to " + targetType + " with id " + id + "")
             let packet = svg.append("g")
                 .attr("class", "packet")
                 .selectAll("circle")
@@ -660,7 +580,7 @@
                 }))
                 .enter()
                 .append("circle")
-                .attr("r", 14) // Bigger ball
+                .attr("r", 5)
                 .style("fill", function (d) {
                     if (interceptedPacket) {
                         return "#ff0000";
@@ -700,7 +620,7 @@
 
             packet
                 .transition()
-                .duration(1600)
+                .duration(800)
                 .attr("cx", function (d) {
                     if (isSourceToTarget) {
                         if (d.target.type === targetType) {
@@ -731,7 +651,7 @@
                         return d.source.id === id;
                     })
                     .remove();
-            }, 1600)
+            }, 800)
 
             return destination
         }
@@ -764,19 +684,6 @@
                 .on("drag", dragged)
                 .on("end", dragEnded);
         }
-
-        // Listen for flex-box and log panel resize to recenter hacker
-        if (window._resizeObserver) {
-            window._resizeObserver.disconnect();
-        }
-        window._resizeObserver = new ResizeObserver(function() {
-            let newWidth = getChartWidth();
-            svg.attr("width", newWidth);
-            simulation.force("center", d3.forceCenter(newWidth / 2, height / 2));
-            simulation.alpha(0.3).restart(); // Force simulation to update positions
-        });
-        window._resizeObserver.observe(flexBox);
-        window._resizeObserver.observe(document.getElementById("logs")); // Also observe log panel
     }
 
 
